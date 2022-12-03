@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <h1 class="mt-4 display-4">{{ moment.title }}</h1>
+    <code>Date Created: {{ moment.date }}</code><br>
+    <hr>
+    {% if user.is_authenticated %}
+    <a href="{% url 'edit-moment-page' moment.pk %}" class="btn btn-light">Edit</a>
+    <a href="{% url 'delete-moment-page' moment.pk %}" class="btn btn-danger">Delete</a>
+    <br> <br>
+    {% endif %}
+    <p class="lead">{{ moment.text | safe }}</p>
+
+    <br>
+    <br>
+    <a class="btn btn-light" href="{% url 'home-page' %}">Back</a>
+    
+</div>
+
+
+
+{% endblock %}

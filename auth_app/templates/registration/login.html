@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container mt-4">
+  <h1 class="my-4 display-6">Sign In</h1>
+
+  <div class="form-group">
+    <form method="POST">
+      {% csrf_token %} {{ form.as_p }}
+      <button class="btn btn-light">Sign In</button>
+      <p><a href="{% url 'password_reset' %}">Reset Password</a></p>
+    </form>
+  </div>
+
+  <br /><br />
+  <a class="btn btn-light" href="{% url 'home-page' %}">Back</a>
+</div>
+
+{% endblock %}

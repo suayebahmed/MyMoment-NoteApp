@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- <h1>MyMoments</h1> -->
+
+{% for moment in object_list %}
+<div class="container mb-4">
+    <div class="card mt-4">
+        <div class="card-header">{{ moment.id }}</div>
+        <div class="card-body">
+            <h5 class="card-title display-6">{{ moment.title }}</h5>
+            <p class="card-text"><i>Date Created: {{ moment.date }}</i> </p>
+            <a href="{% url 'moment-detail-page' moment.pk %}" class="btn btn-light">Read...</a>
+
+            {% if user.is_authenticated %}
+                <a href="{% url 'edit-moment-page' moment.pk %}" class="btn btn-light">Edit</a>
+                <a href="{% url 'delete-moment-page' moment.pk %}" class="btn btn-light">Delete</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<!-- 
+    <ul class="list-group">
+        <li class="list-group-item">
+            <p>{{ moment.title }} | {{ moment.date }}<a href="{% url 'moment-detail-page' moment.pk %}">   Read</a></p>
+        </li>
+    </ul>
+     -->
+{% endfor %}
+
+
+{% endblock %}

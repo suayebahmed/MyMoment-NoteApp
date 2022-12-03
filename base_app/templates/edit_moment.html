@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+{% if user.is_authenticated %}
+    <div class="container mt-4">
+        <h1 class="my-4 display-6">Edit Moment</h1>
+
+        <div class="form-group">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form.as_p }}
+                <button class="btn btn-light">Update</button>
+            </form>
+        </div>
+
+        <br><br>
+        <a class="btn btn-light" href="{% url 'home-page' %}">Back</a>
+    </div>
+{% else %}
+<div class="container">
+    <p class="lead pt-4">You have no authority to EDIT this page</p>
+    <p class="lead">Please Sign In</p>
+</div>
+{% endif %}
+
+{% endblock %}
