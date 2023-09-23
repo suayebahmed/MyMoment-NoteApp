@@ -5,7 +5,7 @@
 - HTML
 - CSS
 - Bootstrap
-- JS 
+- MYSQL 
 
 ### Here are some screenshot of the project outcome.
 <img width="996" alt="Screenshot 2023-09-23 at 12 22 42 PM" src="https://github.com/suayebahmed/MyMoment-NoteApp/assets/63619068/87adc074-e9b6-48ac-91ac-3b78cf2f5e91">
